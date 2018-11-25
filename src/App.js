@@ -5,20 +5,46 @@ import MapContainer from './MapContainer.js'
 
 class App extends Component {
 
-  /*state = {
-    lat: 39.1031,
-    lon: -84.5120,
-    zoom: 8,
-    //selectedPlace: {name: 'Cincinnati'}
-  }*/
+  state = {
+    places: [
+      { name: "Newport Aquarium",
+        location: {
+          lat: 39.0947, 
+          lng: -84.4974
+        }       
+      },
+      { name: "Cincinnati Zoo",
+        location: {
+          lat: 39.1446, 
+          lng: -84.5086
+        }
+      },
+      { name: "Purple People Bridge",
+        location: {
+          lat: 39.0980, 
+          lng: -84.4977 
+        }
+      },
+      { 
+        name: "Fountain Square",
+        location: {
+          lat: 39.1015, 
+          lng: -84.5125
+        }
+      },
+      { 
+        name: "Railway Museum of Greater Cincinnati",
+        location: {
+          lat: 39.0478, 
+          lng: -84.5080
+        }
+      }
+    ]
+  };
 
-  /*initMap = () => {
-    const map = new window.google.maps.Map(document.getElementById('map'), {
-      //center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  }
-*/
+  /*componentDidMount() {
+    this.getFourSquareData();
+  }*/
 
   render() {
     return (

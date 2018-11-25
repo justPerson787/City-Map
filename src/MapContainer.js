@@ -13,15 +13,12 @@ export class MapContainer extends React.Component {
             lat: 39.1031,
             lng: -84.5120
         }
-        //selectedPlace: {name: 'Cincinnati'}
+       
     }
 
   render() {
 
-    /*const center = {
-        lat: 39.1031,
-        lng: -84.5120
-      }*/
+    
     return (
         <Map 
             aria-label="map"
@@ -32,6 +29,10 @@ export class MapContainer extends React.Component {
   
           {/*<Marker onClick={this.onMarkerClick}
                   name={'Current location'} />*/}
+            <Marker
+                name={'Dolores park'}
+                position={{lat: 39.1031, lng: -84.5120}}
+            />
   
           {/*<InfoWindow onClose={this.onInfoWindowClose}>
               <div>
@@ -43,7 +44,19 @@ export class MapContainer extends React.Component {
   }
 }
   
-  
+/*<div className="list-books-content">
+    {shelves.map((item) => 
+        <Bookshelf 
+            key={item}
+            books={this.props.books} 
+            title={item[0]} 
+            shelfKey = {item[1]}
+            updateBook={this.props.updateBook}
+        />
+    )}
+</div>*/
+
+
 export default GoogleApiWrapper({
     apiKey: map_Key
 })(MapContainer)
