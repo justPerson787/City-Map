@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import MapContainer from './MapContainer.js'
+import MapContainer from './MapContainer.js';
+import places from "./places.json";
 
 class App extends Component {
 
   state = {
-    places: [
+    places2: [
       { name: "Newport Aquarium",
         location: {
           lat: 39.0947, 
@@ -42,16 +43,20 @@ class App extends Component {
     ]
   };
 
+  
+
   /*componentDidMount() {
-    this.getFourSquareData();
+      this.setState({ places: this.state.places });
   }*/
+  
 
   render() {
+    
     return (
       <main>
         <div id="map">
           
-          <MapContainer></MapContainer>
+          <MapContainer places={places}/>
         </div>
       </main>
       

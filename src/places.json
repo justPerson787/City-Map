@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Newport Aquarium",
+    "latitude": "39.0947",
+    "longitude": "-84.4974"
+  },
+  {
+    "id": 2,
+    "name": "Cincinnati Zoo & Botanical Garden",
+    "latitude": "39.1446",
+    "longitude": "-84.5086"
+  },
+  {
+    "id": 3,
+    "name": "Purple People Bridge",
+    "latitude": "39.0980",
+    "longitude": "-84.4977"
+  },
+  {
+    "id": 4,
+    "name": "Fountain Square",
+    "latitude": "39.1015",
+    "longitude": "-84.5125"
+  },
+  {
+    "id": 5,
+    "name": "University of Cincinnati",
+    "latitude": "39.1320",
+    "longitude": "-84.5155"
+  }
+]
+
