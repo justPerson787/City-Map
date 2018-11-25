@@ -31,8 +31,13 @@
   }
 } /*check this skobka*/
 
+#maincontent  {
+    display:flex; flex-direction:row;
+}
+
 #map {
     height: 100%;
+    
 }
   /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -41,3 +46,7 @@ html, body {
     padding: 0;
 }
 
+/*Sidebar styles*/
+.sidebar {
+  width: 30%
+}
