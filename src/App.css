@@ -46,7 +46,13 @@ html, body {
     padding: 0;
 }
 
-/*Sidebar styles*/
+/*SIDEBAR*/
 .sidebar {
   width: 30%
+}
+
+/*filter/search line*/
+.filter {
+  padding: 5px;
+  background: greenyellow;
 }
