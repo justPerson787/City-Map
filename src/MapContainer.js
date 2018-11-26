@@ -11,13 +11,7 @@ export class MapContainer extends React.Component {
         center: {
             lat: 39.1031,
             lng: -84.5120
-        },
-        markers:[{name: "Newport Aquarium", location: {lat: 39.0947, lng: -84.4974}}, 
-        {name: "Fountain Square", location: {lat: 39.1015, lng: -84.5125}},
-        {name: "Newport", location: {lat: 39.0947, lng: -84.4974}},
-        {name: "Newport", location: {lat: 39.0947, lng: -84.4974}},
-        {name: "Newport", location: {lat: 39.0947, lng: -84.4974}},]
-       
+        }        
     }
 
     render() {
@@ -32,15 +26,7 @@ export class MapContainer extends React.Component {
                     initialCenter={this.state.center}
                     zoom={this.state.zoom}
                 >                
-                    {/*{this.props.places.map((place, key) =>
-                        <Marker
-                            key = {key}
-                            
-                            name={place.name}
-                            position={{lat: place.location.lat, lng: place.location.lng}}
-                        />
-                    )}*/}
-
+                    
                     {this.props.places.map((marker) => 
                         <Marker 
                             key={marker.id}
