@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-//import PropTypes from 'prop-types'
-
 
 const map_Key = "AIzaSyAD282YtNT5yIr79A9vtGC-qBC2c0WXUdk";
 
 export class MapContainer extends React.Component {
-    /*static propTypes = {
-        places: PropTypes.array.isRequired        
-    }*/
-
-  
-
+    
     state = {
         selectedPlace: {name: 'Cincinnati'},
         zoom: 12,
@@ -29,8 +22,7 @@ export class MapContainer extends React.Component {
 
     render() {
       
-
-    
+   
         return (
             <div>
                 <Map 

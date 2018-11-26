@@ -2,30 +2,28 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import MapContainer from './MapContainer.js';
-import ListView from './ListView.js'
-import places from "./places.json";
+import SideBar from './SideBar.js'
+import allPlaces from "./places.json";
 
 class App extends Component {
 
   state = {
-    places2: []
+    //selectedPlaces: [],
+    places: []
   };
 
-  
-
-  /*componentDidMount() {
-      this.setState({ places: this.state.places });
-  }*/
-  
-
-  render() {
+  componentDidMount() {
+    this.setState({places: allPlaces})
+  }
     
+  render() {
+         
     return (
       <main>
                         
         <div id="maincontent">
-          <ListView places={places}/>
-          <MapContainer places={places}/>
+          <SideBar places={this.state.places}/>
+          <MapContainer places={this.state.places}/>
         </div>
       </main>
       
@@ -33,7 +31,6 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
 
