@@ -67,7 +67,7 @@ class SideBar extends Component {
                 <div id="map"><MapContainer places={this.state.selectedPlaces}/></div>
             </div>
           
-          
+        
         )
     }
 }

@@ -20,11 +20,11 @@ class App extends Component {
     this.setState({places: {selectedPlaces}})
   }*/
 
-  onUpdate = (selectedPlaces) => {
+  /*onUpdate = (selectedPlaces) => {
     this.setState({
       places: selectedPlaces});
       console.log('kokoko', this.state.places)
-  };
+  };*/
 
     
   render() {
