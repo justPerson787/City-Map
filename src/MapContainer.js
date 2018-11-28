@@ -9,14 +9,12 @@ const map_Key = "AIzaSyAD282YtNT5yIr79A9vtGC-qBC2c0WXUdk";
 export class MapContainer extends React.Component {
     
     state = {
-        zoom: 12,
-        center: {},
+        zoom: 12,        
         showingInfoWindow: false,
         activeMarker: {markerName:'none'},
         animation: null, 
         open: false,
-        center: {}
-                   
+                           
     }
 
     // Animation effect with marker on click
@@ -42,11 +40,14 @@ export class MapContainer extends React.Component {
     };
 
     onOpenModal = () => {
-        this.setState({ open: true });
+        this.setState({ 
+            open: true });
     };
      
     onCloseModal = () => {
-        this.setState({ open: false });
+        this.setState({ open: false,
+            activeMarker: {markerName:'none'} 
+        });
     };
 
     /*componentDidMount(){
