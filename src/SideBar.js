@@ -21,15 +21,20 @@ class SideBar extends Component {
 // Function to filter locations based on user search input
 
     searchPlace = (query) => {        
-    if (!query) {
-        this.setState({ selectedPlaces: allPlaces})                  
-    }
-    else {
-        const filteredPlaces = this.props.places.filter((place) => place.name.toLowerCase().includes(query.toLowerCase()));
-        this.setState({ selectedPlaces: filteredPlaces });
-    }
+        if (!query) {
+            this.setState({ selectedPlaces: allPlaces})                  
+        }
+        else {
+            const filteredPlaces = this.props.places.filter((place) => place.name.toLowerCase().includes(query.toLowerCase()));
+            this.setState({ selectedPlaces: filteredPlaces });
+        }
+    }  
+    
+    // Set active marker when clicking list item
+  setActiveMarker = (marker) => {
+    document.querySelector(`[markerName="${marker}"]`).click();
+  }
 
-    }    
     componentDidMount() {
         this.setState({selectedPlaces: allPlaces})
        // this.getImages();
@@ -45,8 +50,8 @@ class SideBar extends Component {
                 
               <div className="sidebar">
                 <h2 className="sidebar-title">Points of Interest</h2>
-                <p class='sources'>Images are provided by Flickr.com API</p>
-                <p class='sources'>Map is provided by Google map</p>
+                <p className='sources'>Images are provided by Flickr.com API</p>
+                <p className='sources'>Map is provided by Google Maps API</p>
                 <input aria-label='Search Filter' className="filter" type='text'
                     placeholder="Search by location"
                     
@@ -67,7 +72,7 @@ class SideBar extends Component {
                     </ul>
                     
               </div>                                          
-                <div id="map"><MapContainer places={this.state.selectedPlaces}/></div>
+                <div id="map"><MapContainer places={this.state.selectedPlaces} setActiveMarker={this.setActiveMarker}/></div>
             </div>
                   
         )

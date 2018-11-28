@@ -44,6 +44,7 @@ class ImagesAP extends Component {
           <p>
             {this.state.pictures}
           </p>
+          
         </div>
       );
     }

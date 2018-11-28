@@ -10,14 +10,12 @@ export class MapContainer extends React.Component {
     
     state = {
         zoom: 12,
-        center: {
-            lat: 39.1031,
-            lng: -84.5120
-        },
+        center: {},
         showingInfoWindow: false,
         activeMarker: {markerName:'none'},
         animation: null, 
-        open: true,            
+        open: false,
+        initialCenter: {}            
     }
 
     // Animation effect with marker on click
@@ -50,6 +48,12 @@ export class MapContainer extends React.Component {
         this.setState({ open: false });
     };
 
+    /*componentDidMount(){
+        this.setState({center:{lat: parseFloat('39.1031'),
+            lng: parseFloat('-84.5120')}})
+    }*/
+
+    
     render() { 
         console.log(this.state.activeMarker.name)
                 
@@ -59,7 +63,10 @@ export class MapContainer extends React.Component {
                     aria-label="map"
                     role="application"
                     google={this.props.google}
-                    initialCenter={this.state.center}
+                    initialCenter={{
+                        lat: 39.1031,
+                        lng: -84.5120
+                      }}
                     zoom={this.state.zoom}
                     onClick = {this.onMapClicked}
                 >                
@@ -80,7 +87,7 @@ export class MapContainer extends React.Component {
 
                     <div>
                         <Modal open={this.state.open} onClose={this.onCloseModal} center>
-                        <div><ImagesAP name2={this.state.activeMarker.name}/></div>
+                            <div><ImagesAP name2={this.state.activeMarker.name}/></div>                             
                         </Modal>
                     </div>
                                         
