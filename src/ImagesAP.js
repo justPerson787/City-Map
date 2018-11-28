@@ -26,7 +26,7 @@ class ImagesAP extends Component {
             
             var srcPath = 'https://farm'+pic.farm+'.staticflickr.com/'+pic.server+'/'+pic.id+'_'+pic.secret+'_m.jpg';
             return(
-              <img alt={this.props.name2} src={srcPath}></img>
+              <img alt={this.props.name2} src={srcPath} key={pic.id}></img>
             )
           })
           this.setState({pictures: picArray});

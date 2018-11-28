@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ErrorMessage from './ErrorMsg.js'
+
+window.gm_authFailure = () => {
+    ReactDOM.render(<ErrorMessage/>, document.getElementById('root'));
+  }
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
