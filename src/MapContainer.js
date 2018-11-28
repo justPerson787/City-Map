@@ -87,22 +87,21 @@ export class MapContainer extends React.Component {
                         
                     )}
 
-                    <div>
-                        <Modal open={this.state.open} onClose={this.onCloseModal} center tabIndex='0'>
-                            <div><ImagesAP name2={this.state.activeMarker.name}/></div>                             
-                        </Modal>
-                    </div>
+                    
                                         
 
                     {/*<InfoWindow 
                         visible = {this.state.showingInfoWindow}
                         marker = {this.state.activeMarker}     >                            
                         <div>some text</div>
-                    </InfoWindow>*/}
-
-                    
+                    </InfoWindow>*/}                   
                     
                 </Map>
+                    <div>
+                        <Modal open={this.state.open} onClose={this.onCloseModal} center tabIndex='0'>
+                            <div><ImagesAP name2={this.state.activeMarker.name}/></div>                             
+                        </Modal>
+                    </div>
             </div>
             
         );
