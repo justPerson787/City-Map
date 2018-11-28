@@ -15,7 +15,7 @@ export class MapContainer extends React.Component {
         activeMarker: {markerName:'none'},
         animation: null, 
         open: false,
-        initialCenter: {}            
+                   
     }
 
     // Animation effect with marker on click

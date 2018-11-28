@@ -29,6 +29,7 @@ class ImagesAP extends Component {
               <img alt={this.props.name2} src={srcPath} key={pic.id}></img>
             )
           })
+          
           this.setState({pictures: picArray});
         }.bind(this))
       }
