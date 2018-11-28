@@ -15,6 +15,7 @@ export class MapContainer extends React.Component {
         activeMarker: {markerName:'none'},
         animation: null, 
         open: false,
+        center: {}
                    
     }
 
@@ -55,7 +56,7 @@ export class MapContainer extends React.Component {
 
     
     render() { 
-        console.log(this.state.activeMarker.name)
+        //console.log(this.state.activeMarker.name)
                 
         return (
             <div>
@@ -86,7 +87,7 @@ export class MapContainer extends React.Component {
                     )}
 
                     <div>
-                        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+                        <Modal open={this.state.open} onClose={this.onCloseModal} center tabIndex='0'>
                             <div><ImagesAP name2={this.state.activeMarker.name}/></div>                             
                         </Modal>
                     </div>

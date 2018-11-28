@@ -53,7 +53,7 @@ class SideBar extends Component {
                 <p className='sources'>Images are provided by Flickr.com API</p>
                 <p className='sources'>Map is provided by Google Maps API</p>
                 <input aria-label='Search Filter' className="filter" type='text'
-                    placeholder="Search by location" tabIndex='0'
+                    placeholder="Search by name" tabIndex='0'
                     
                     onChange = {(event) => this.updateQuery(event.target.value)}   
                 ></input>
