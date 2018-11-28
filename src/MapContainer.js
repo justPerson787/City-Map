@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import { createConnection } from 'net';
+import Modal from 'react-responsive-modal';
+import ImagesAP from './ImagesAP.js';
+
 
 const map_Key = "AIzaSyAD282YtNT5yIr79A9vtGC-qBC2c0WXUdk";
 
@@ -14,8 +16,8 @@ export class MapContainer extends React.Component {
         },
         showingInfoWindow: false,
         activeMarker: {markerName:'none'},
-        selectedMarker: [], 
-        animation: null,        
+        animation: null, 
+        open: true,            
     }
 
     // Animation effect with marker on click
@@ -25,32 +27,32 @@ export class MapContainer extends React.Component {
             selectedMarker: props,
             activeMarker: marker,
             showingInfoWindow: true,
-                
+            open: true,
+            
         });
         
-    onAnimation = (marker) =>
-        marker.setAnimation(window.google.maps.Animation.BOUNCE);
-        /*setTimeout(function() {
-          marker.setAnimation(null);
-        }, 2100); */  
         
-        /*marker.setAnimation(window.google.maps.Animation.BOUNCE);
-        setTimeout(function() {
-          marker.setAnimation(null);
-        }, 2100);*/
-
     onMapClicked = (props) => {
         if (this.state.showingInfoWindow) {
           this.setState({
             showingInfoWindow: false,
             activeMarker: {markerName:'none'}
             
-            })
+          })
         }
     };
 
-    render() {    
-   
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+     
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
+
+    render() { 
+        console.log(this.state.activeMarker.name)
+                
         return (
             <div>
                 <Map 
@@ -66,24 +68,34 @@ export class MapContainer extends React.Component {
                         <Marker 
                             key={marker.id}
                             markerName={marker.name}
+                            name = {marker.name}                            
                             position={{ lat: marker.latitude, lng: marker.longitude }}
                             onClick={this.onMarkerClick}
-                            animation={this.state.activeMarker.markerName === marker.name &&this.props.google.maps.Animation.BOUNCE}
-                                                       
+                            animation={this.state.activeMarker.markerName === marker.name &&this.props.google.maps.Animation.BOUNCE} 
+                                                                             
 
                         />
+                        
                     )}
 
-                    <InfoWindow 
+                    <div>
+                        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+                        <div><ImagesAP name2={this.state.activeMarker.name}/></div>
+                        </Modal>
+                    </div>
+                                        
+
+                    {/*<InfoWindow 
                         visible = {this.state.showingInfoWindow}
                         marker = {this.state.activeMarker}     >                            
-                        <div>
-                            <p>Hello</p>
-                        </div>
-                    </InfoWindow>
+                        <div>some text</div>
+                    </InfoWindow>*/}
+
+                    
                     
                 </Map>
             </div>
+            
         );
     }
 }
@@ -93,11 +105,3 @@ export default GoogleApiWrapper({
 })(MapContainer)
     
 
-/*location.marker.addListener('click', function() {
-        const marker = this;
-
-        // bounce marker three times then stop
-        marker.setAnimation(window.google.maps.Animation.BOUNCE);
-        setTimeout(function() {
-          marker.setAnimation(null);
-        }, 2100);*/

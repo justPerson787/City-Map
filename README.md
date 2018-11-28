@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project used Flickr.com and Google map APIs for images and map accordingly.
 
 ## Available Scripts
 

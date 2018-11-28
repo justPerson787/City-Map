@@ -4,6 +4,7 @@ import './App.css';
 //import MapContainer from './MapContainer.js';
 import SideBar from './SideBar.js'
 import allPlaces from "./places.json";
+import ImagesAP from './ImagesAP.js';
 
 class App extends Component {
 
@@ -16,17 +17,7 @@ class App extends Component {
     this.setState({places: allPlaces})
   }
 
-  /*updatePlaces: function(item) {
-    this.setState({places: {selectedPlaces}})
-  }*/
-
-  /*onUpdate = (selectedPlaces) => {
-    this.setState({
-      places: selectedPlaces});
-      console.log('kokoko', this.state.places)
-  };*/
-
-    
+   
   render() {
          
     return (
@@ -34,8 +25,8 @@ class App extends Component {
                         
         <div >
           <SideBar places={this.state.places} />
-          {/*<MapContainer places={this.state.places}/>*/}
         </div>
+        {/*<div><ImagesAP/></div>*/}
       </main>
       
 

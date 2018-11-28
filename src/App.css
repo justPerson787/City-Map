@@ -52,6 +52,10 @@ html, body {
   width: 30%
 }
 
+.sources {
+  font-size: small
+}
+
 /*filter/search line*/
 .filter {
   padding: 5px;

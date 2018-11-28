@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import places from "./places.json";
+//import picture from "./FlickrAPI.js";
 import allPlaces from "./places.json";
 import MapContainer from './MapContainer.js';
 
@@ -8,15 +8,10 @@ class SideBar extends Component {
     state = {
         query: '',
         selectedPlaces: [],
+        pictures: []
             
     }
     
-    
-    /*updatePlaces = ()  => {
-        this.setState({selectedPlaces: this.props.places})
-    }*/
-
-
     updateQuery = (query) => {
         this.setState({ query: query }, () => {
           this.searchPlace(this.state.query); 
@@ -37,17 +32,21 @@ class SideBar extends Component {
     }    
     componentDidMount() {
         this.setState({selectedPlaces: allPlaces})
-      }  
+       // this.getImages();
+        
+    }  
 
+    
     render() {       
-         
-                   
-        console.log(this.state.selectedPlaces,'ppp', this.props.places)    
+                            
+        
         return (
             <div id="maincontent">
                 
               <div className="sidebar">
                 <h2 className="sidebar-title">Points of Interest</h2>
+                <p class='sources'>Images are provided by Flickr.com API</p>
+                <p class='sources'>Map is provided by Google map</p>
                 <input aria-label='Search Filter' className="filter" type='text'
                     placeholder="Search by location"
                     
@@ -57,7 +56,11 @@ class SideBar extends Component {
                         {this.state.selectedPlaces.map((place, id) => 
                         <li
                             className="location"
-                            key={place.id}>
+                            key={place.id}
+                            role='button'
+                            tabIndex='0'
+                            aria-label='place location'>
+                            
                             {place.name}
                         </li>
                         )}                      
@@ -66,8 +69,7 @@ class SideBar extends Component {
               </div>                                          
                 <div id="map"><MapContainer places={this.state.selectedPlaces}/></div>
             </div>
-          
-        
+                  
         )
     }
 }
