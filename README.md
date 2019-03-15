@@ -7,7 +7,7 @@ This is the final project for the Udacity's Front End Web Developer nanodegree.
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
-The project will open at open http://localhost:3000.
+The project will open at  http://localhost:3000.
 
 
 ## Learn More
