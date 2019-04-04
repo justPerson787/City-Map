@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
-//import MapContainer from './MapContainer.js';
 import SideBar from './SideBar.js'
 import allPlaces from "./places.json";
-import ImagesAP from './ImagesAP.js';
 
 class App extends Component {
 
@@ -16,7 +13,6 @@ class App extends Component {
   componentDidMount() {
     this.setState({places: allPlaces})
   }
-
    
   render() {
          
@@ -26,9 +22,7 @@ class App extends Component {
         <div >
           <SideBar places={this.state.places} />
         </div>
-        {/*<div><ImagesAP/></div>*/}
-      </main>
-      
+      </main>     
 
     );
   }
@@ -36,4 +30,4 @@ class App extends Component {
 
 export default App;
 
-//AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo
+

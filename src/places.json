@@ -28,6 +28,12 @@
     "name": "University of Cincinnati",
     "latitude": "39.1320",
     "longitude": "-84.5155"
+  },
+  {
+    "id": 6,
+    "name": "Washington Park",
+    "latitude": "39.1092",
+    "longitude": "-84.5173"
   }
 ]
 

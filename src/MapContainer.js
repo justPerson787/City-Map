@@ -9,12 +9,10 @@ const map_Key = "AIzaSyAD282YtNT5yIr79A9vtGC-qBC2c0WXUdk";
 export class MapContainer extends React.Component {
     
     state = {
-        zoom: 12,        
-        showingInfoWindow: false,
+        zoom: 12,
         activeMarker: {markerName:'none'},
         animation: null, 
-        open: false,
-                           
+        open: false,                           
     }
 
     // Animation effect with marker on click
@@ -23,7 +21,6 @@ export class MapContainer extends React.Component {
         this.setState({
             selectedMarker: props,
             activeMarker: marker,
-            showingInfoWindow: true,
             open: true,
             
         });
@@ -32,9 +29,7 @@ export class MapContainer extends React.Component {
     onMapClicked = (props) => {
         if (this.state.showingInfoWindow) {
           this.setState({
-            showingInfoWindow: false,
-            activeMarker: {markerName:'none'}
-            
+            activeMarker: {markerName:'none'}            
           })
         }
     };
@@ -48,17 +43,10 @@ export class MapContainer extends React.Component {
         this.setState({ open: false,
             activeMarker: {markerName:'none'} 
         });
-    };
-
-    /*componentDidMount(){
-        this.setState({center:{lat: parseFloat('39.1031'),
-            lng: parseFloat('-84.5120')}})
-    }*/
-
+    }; 
     
     render() { 
-        //console.log(this.state.activeMarker.name)
-                
+                        
         return (
             <div>
                 <Map 
@@ -80,21 +68,10 @@ export class MapContainer extends React.Component {
                             name = {marker.name}                            
                             position={{ lat: marker.latitude, lng: marker.longitude }}
                             onClick={this.onMarkerClick}
-                            animation={this.state.activeMarker.markerName === marker.name &&this.props.google.maps.Animation.BOUNCE} 
-                                                                             
+                            animation={this.state.activeMarker.markerName === marker.name &&this.props.google.maps.Animation.BOUNCE}                                                                          
 
-                        />
-                        
-                    )}
-
-                    
-                                        
-
-                    {/*<InfoWindow 
-                        visible = {this.state.showingInfoWindow}
-                        marker = {this.state.activeMarker}     >                            
-                        <div>some text</div>
-                    </InfoWindow>*/}                   
+                        />                        
+                    )}                                    
                     
                 </Map>
                     <div>
@@ -102,8 +79,7 @@ export class MapContainer extends React.Component {
                             <div><ImagesAP name2={this.state.activeMarker.name}/></div>                             
                         </Modal>
                     </div>
-            </div>
-            
+            </div>            
         );
     }
 }

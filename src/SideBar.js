@@ -8,8 +8,7 @@ class SideBar extends Component {
     state = {
         query: '',
         selectedPlaces: [],
-        pictures: []
-            
+        pictures: []            
     }
     
     updateQuery = (query) => {
@@ -37,24 +36,19 @@ class SideBar extends Component {
 
     componentDidMount() {
         this.setState({selectedPlaces: allPlaces})
-       // this.getImages();
-        
+       // this.getImages();        
     }  
-
     
-    render() {       
-                            
+    render() {                                 
         
         return (
-            <div id="maincontent">
-                
+            <div id="maincontent">                
               <div className="sidebar">
                 <h2 className="sidebar-title" tabIndex='0'>Points of Interest</h2>
                 <p className='sources'>Images are provided by Flickr.com API</p>
                 <p className='sources'>Map is provided by Google Maps API</p>
                 <input aria-label='Search Filter' className="filter" type='text'
-                    placeholder="Search by name" tabIndex='0'
-                    
+                    placeholder="Search by name" tabIndex='0'                    
                     onChange = {(event) => this.updateQuery(event.target.value)}   
                 ></input>
                     <ul className="cc">
@@ -73,8 +67,7 @@ class SideBar extends Component {
                     
               </div>                                          
                 <div id="map"><MapContainer places={this.state.selectedPlaces} setActiveMarker={this.setActiveMarker}/></div>
-            </div>
-                  
+            </div>                  
         )
     }
 }
