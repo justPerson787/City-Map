@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import picture from "./FlickrAPI.js";
 import allPlaces from "./places.json";
 import MapContainer from './MapContainer.js';
 
@@ -18,7 +17,6 @@ class SideBar extends Component {
     }
     
 // Function to filter locations based on user search input
-
     searchPlace = (query) => {        
         if (!query) {
             this.setState({ selectedPlaces: allPlaces})                  
@@ -35,11 +33,10 @@ class SideBar extends Component {
   }
 
     componentDidMount() {
-        this.setState({selectedPlaces: allPlaces})
-       // this.getImages();        
+        this.setState({selectedPlaces: allPlaces});
     }  
     
-    render() {                                 
+    render() {                  
         
         return (
             <div id="maincontent">                
@@ -72,4 +69,3 @@ class SideBar extends Component {
     }
 }
 export default SideBar
-

@@ -37,7 +37,7 @@ box-sizing: border-box;
   to {
     transform: rotate(360deg);
   }
-} /*check this skobka*/
+} 
 
 #maincontent  {
     display:flex; flex-direction:row;

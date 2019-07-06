@@ -1,10 +1,12 @@
 ## About The Project
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-It uses Flickr.com and Google map APIs for images and map loading.
+I used Flickr.com and Google map APIs for images and map loading.
 
 
 ## How  to Run
 
+* clone the repository git clone 
+* change working directory cd directory_name
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 The project will open at  http://localhost:3000.

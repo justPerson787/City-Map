@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Modal from 'react-responsive-modal';
 import ImagesAP from './ImagesAP.js';
-
 
 const map_Key = "AIzaSyAD282YtNT5yIr79A9vtGC-qBC2c0WXUdk";
 
@@ -23,8 +22,7 @@ export class MapContainer extends React.Component {
             activeMarker: marker,
             open: true,
             
-        });
-        
+        });        
         
     onMapClicked = (props) => {
         if (this.state.showingInfoWindow) {
@@ -45,8 +43,7 @@ export class MapContainer extends React.Component {
         });
     }; 
     
-    render() { 
-                        
+    render() {                         
         return (
             <div>
                 <Map 
@@ -86,6 +83,4 @@ export class MapContainer extends React.Component {
   
 export default GoogleApiWrapper({
     apiKey: map_Key
-})(MapContainer)
-    
-
+})(MapContainer)   
